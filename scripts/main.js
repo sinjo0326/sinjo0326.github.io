@@ -2,15 +2,44 @@ var myButton = document.querySelector('button');
 var myHeading = document.querySelector('h1');
 
 function setUserName() {
-    //2人組用、3人組用、4人組用の固定値リストを宣言する。36要素。AABBCC・・・
+	// 座席表をクリア
+    for (var i = 0; i < 6; i++) {
+    	for (var j = 0; j < 6; j++) {
+			var id = String(i) + String(j);
+    		document.getElementById(id).innerHTML = "";
+    		document.getElementById(id).className = "";
+    	}
+    }
+
+	//2人組用、3人組用、4人組用の固定値リストを宣言する。36要素。AABBCC・・・
     var LIST_2PAIR = new Array("A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H", "I", "I", "J", "J", "K", "K", "L", "L", "M", "M", "N", "N", "O", "O", "P", "P", "Q", "Q", "R", "R");
     var LIST_3PAIR = new Array("A", "A", "A", "B", "B", "B", "C", "C", "C", "D", "D", "D", "E", "E", "E", "F", "F", "F", "G", "G", "G", "H", "H", "H", "I", "I", "I", "J", "J", "J", "K", "K", "K", "L", "L", "L");
     var LIST_4PAIR = new Array("A", "A", "A", "A", "B", "B", "B", "B", "C", "C", "C", "C", "D", "D", "D", "D", "E", "E", "E", "E", "F", "F", "F", "F", "G", "G", "G", "G", "H", "H", "H", "H", "I", "I", "I", "I");
 
+    // 2次元配列の要素数取得・設定
+    var dimension = Number(document.getElementById('dimension').value);
+	// 6*6の人数分に足りない分は欠席者として扱う(例：3次元の場合は36 - 3 * 3 = 27人は欠席扱い)
+    var intAbsenteeNum = 36 - (dimension * dimension);
+
+    var arrayStudent = new Array(dimension)
+    for(let y = 0; y < dimension; y++) {
+    	arrayStudent[y] = new Array(dimension).fill(y);
+    }
+
+    // 出欠のリストを読み込みつつ設定
+    for (var i = 0; i < dimension; i++) {
+    	for (var j = 0; j < dimension; j++) {
+			var id = "s" + String(i) + String(j);
+			var selectedIndex = document.getElementById(id).selectedIndex;
+    		if (selectedIndex == 1) {
+    			arrayStudent[i][j] = "欠";
+    			intAbsenteeNum++;
+    		}
+    	}
+    }
+
     var targetArray;
-	var rest = document.getElementById('rest').value;
-	var pair = document.getElementById('pair').value;
-	var dimension = Number(document.getElementById('dimension').value);
+	var pair = Number(document.getElementById('pair').value);
     if (pair == 2) {
     	targetArray = LIST_2PAIR;
     } else if (pair == 3) {
@@ -19,22 +48,27 @@ function setUserName() {
     	targetArray = LIST_4PAIR;
     }
 
-    // 欠席の置き換え
-	for (i = 0, len = (rest - 1); i < len; i++) {
-		targetArray[i] = "欠";
-	}
+    // 欠席の人数分配列の末尾を削除
+    for (var i = 0; i < intAbsenteeNum; i++) {
+    	targetArray.pop();
+    }
 
 	// シャッフル
 	targetArray = Shuffle(targetArray);
+	targetIndex = 0;
 
-	var count = 0;
-	for (i = 1; i < (dimension + 1); i++) {
-		for (j = 1; j < (dimension + 1); j++) {
+    for (var i = 0; i < dimension; i++) {
+    	for (var j = 0; j < dimension; j++) {
 			var id = String(i) + String(j);
-			document.getElementById(id).innerHTML = targetArray[count];
-			count++;
-		}
-	}
+			var studentValue = arrayStudent[i][j];
+    		if (studentValue != "欠") {
+    			arrayStudent[i][j] = targetArray[targetIndex];
+    			targetIndex++;
+    		}
+    		document.getElementById(id).innerHTML = arrayStudent[i][j];
+    		document.getElementById(id).className = arrayStudent[i][j];
+    	}
+    }
 }
 
 // ボタンクリック時のイベントハンドラ
