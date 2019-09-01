@@ -76,6 +76,7 @@ function doSekigae() {
     		}
     		document.getElementById(id).innerHTML = arrayStudent[i][j];
     		document.getElementById(id).className = arrayStudent[i][j];
+    		document.getElementById(id).classList.add("student");
     	}
     }
 

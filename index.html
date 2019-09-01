@@ -21,6 +21,8 @@
 	<p></p>
 	<button id="displayInputAreaBtn" onclick="hideInputArea()" class="nodisplay">やり直す</button>
 	<div id="inputArea">
+		<select id="dimension" onchange="hideUnnecessaryCells()"><option value="3" selected>3×3</option><option value="4" selected>4×4</option><option value="5" selected>5×5</option><option value="6" selected>6×6</option></select>の座席数で
+		<p>欠席者を以下の表から選択して</p>
 		<table>
 		  <tr><td id='t55'><select id="s55"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t54'><select id="s54"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t53'><select id="s53"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t52'><select id="s52"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t51'><select id="s51"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t50'><select id="s50"><option value="" selected></option><option value="absence">欠</option></select></td></tr>
 		  <tr><td id='t45'><select id="s45"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t44'><select id="s44"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t43'><select id="s43"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t42'><select id="s42"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t41'><select id="s41"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t40'><select id="s40"><option value="" selected></option><option value="absence">欠</option></select></td></tr>
@@ -30,7 +32,6 @@
 		  <tr><td id='t05'><select id="s05"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t04'><select id="s04"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t03'><select id="s03"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t02'><select id="s02"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t01'><select id="s01"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t00'><select id="s00"><option value="" selected></option><option value="absence">欠</option></select></td></tr>
 		  <tr><td colspan='6' class='teacher'>教卓</td></tr>
 		</table>
-		<select id="dimension" onchange="hideUnnecessaryCells()"><option value="3" selected>3×3</option><option value="4" selected>4×4</option><option value="5" selected>5×5</option><option value="6" selected>6×6</option></select>の席数で
 		<select id="pair"><option value="2" selected>2人組</option><option value="3">3人組</option><option value="4">4人組</option></select>を
 	    <button id="doSekigaeBtn" onclick="doSekigae()">つくる</button>
 	</div>

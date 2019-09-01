@@ -1,8 +1,7 @@
 html {
-  font-size: 10px;
+  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
 }
-
 
 h1 {
   font-size: 60px;
@@ -39,13 +38,19 @@ table{
 td{
   font-size: 300%;
   text-align: center;
-  height:50px;
-  width:50px;
-  max-height: 100px;
-  max-width: 100px;
 }
 
-th.teacher {
+th.teacher{
+}
+
+td.student{
+  font-size: 300%;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  max-height: 100px;
+  max-width: 100px;
+  padding: 10px 0px;
 }
 
 td.欠{
