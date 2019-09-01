@@ -1,4 +1,5 @@
-# beginner-html-site-styled
-A simple one page website created to help complete beginners learn HTML basics, which in this repo has also been styled to help beginners learn CSS basics. The styling is explained over the course of [https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/CSS_basics](https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/CSS_basics).
-
-[Run the example live](http://mdn.github.io/beginner-html-site-styled/).
+# 席替えシステム
+①教員目線で欠席者の座席を指定
+②教室の広さ(座席数)を指定
+③N人組を指定
+で、ランダムにペアを作成することのできるシステムです

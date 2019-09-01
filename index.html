@@ -2,12 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My test page</title>
+    <title>pairing ver1.0</title>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
+	<div id="displayArea" class="nodisplay">
 	<table>
+	  <tr><td colspan='6' class='teacher'>教卓</td></tr>
 	  <tr><td id='00'></td><td id='01'></td><td id='02'></td><td id='03'></td><td id='04'></td><td id='05'></td></tr>
 	  <tr><td id='10'></td><td id='11'></td><td id='12'></td><td id='13'></td><td id='14'></td><td id='15'></td></tr>
 	  <tr><td id='20'></td><td id='21'></td><td id='22'></td><td id='23'></td><td id='24'></td><td id='25'></td></tr>
@@ -15,17 +17,23 @@
 	  <tr><td id='40'></td><td id='41'></td><td id='42'></td><td id='43'></td><td id='44'></td><td id='45'></td></tr>
 	  <tr><td id='50'></td><td id='51'></td><td id='52'></td><td id='53'></td><td id='54'></td><td id='55'></td></tr>
 	</table>
-	<table>
-	  <tr><td id='t55'><select id="s55"><option value="" selected></option><option value="absence">欠</option></td><td id='t54'><select id="s54"><option value="" selected></option><option value="absence">欠</option></td><td id='t53'><select id="s53"><option value="" selected></option><option value="absence">欠</option></td><td id='t52'><select id="s52"><option value="" selected></option><option value="absence">欠</option></td><td id='t51'><select id="s51"><option value="" selected></option><option value="absence">欠</option></td><td id='t50'><select id="s50"><option value="" selected></option><option value="absence">欠</option></td></tr>
-	  <tr><td id='t45'><select id="s45"><option value="" selected></option><option value="absence">欠</option></td><td id='t44'><select id="s44"><option value="" selected></option><option value="absence">欠</option></td><td id='t43'><select id="s43"><option value="" selected></option><option value="absence">欠</option></td><td id='t42'><select id="s42"><option value="" selected></option><option value="absence">欠</option></td><td id='t41'><select id="s41"><option value="" selected></option><option value="absence">欠</option></td><td id='t40'><select id="s40"><option value="" selected></option><option value="absence">欠</option></td></tr>
-	  <tr><td id='t35'><select id="s35"><option value="" selected></option><option value="absence">欠</option></td><td id='t34'><select id="s34"><option value="" selected></option><option value="absence">欠</option></td><td id='t33'><select id="s33"><option value="" selected></option><option value="absence">欠</option></td><td id='t32'><select id="s32"><option value="" selected></option><option value="absence">欠</option></td><td id='t31'><select id="s31"><option value="" selected></option><option value="absence">欠</option></td><td id='t30'><select id="s30"><option value="" selected></option><option value="absence">欠</option></td></tr>
-	  <tr><td id='t25'><select id="s25"><option value="" selected></option><option value="absence">欠</option></td><td id='t24'><select id="s24"><option value="" selected></option><option value="absence">欠</option></td><td id='t23'><select id="s23"><option value="" selected></option><option value="absence">欠</option></td><td id='t22'><select id="s22"><option value="" selected></option><option value="absence">欠</option></td><td id='t21'><select id="s21"><option value="" selected></option><option value="absence">欠</option></td><td id='t20'><select id="s20"><option value="" selected></option><option value="absence">欠</option></td></tr>
-	  <tr><td id='t15'><select id="s15"><option value="" selected></option><option value="absence">欠</option></td><td id='t14'><select id="s14"><option value="" selected></option><option value="absence">欠</option></td><td id='t13'><select id="s13"><option value="" selected></option><option value="absence">欠</option></td><td id='t12'><select id="s12"><option value="" selected></option><option value="absence">欠</option></td><td id='t11'><select id="s11"><option value="" selected></option><option value="absence">欠</option></td><td id='t10'><select id="s10"><option value="" selected></option><option value="absence">欠</option></td></tr>
-	  <tr><td id='t05'><select id="s05"><option value="" selected></option><option value="absence">欠</option></td><td id='t04'><select id="s04"><option value="" selected></option><option value="absence">欠</option></td><td id='t03'><select id="s03"><option value="" selected></option><option value="absence">欠</option></td><td id='t02'><select id="s02"><option value="" selected></option><option value="absence">欠</option></td><td id='t01'><select id="s01"><option value="" selected></option><option value="absence">欠</option></td><td id='t00'><select id="s00"><option value="" selected></option><option value="absence">欠</option></td></tr>
-	</table>
-	<select id="dimension"><option value="3" selected>3×3</option><option value="4" selected>4×4</option><option value="5" selected>5×5</option><option value="6" selected>6×6</option></select>の席数で
-	<select id="pair"><option value="2" selected>2人組</option><option value="3">3人組</option><option value="4">4人組</option></select>を
-    <button>つくる</button>
+	</div>
+	<p></p>
+	<button id="displayInputAreaBtn" onclick="hideInputArea()" class="nodisplay">やり直す</button>
+	<div id="inputArea">
+		<table>
+		  <tr><td id='t55'><select id="s55"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t54'><select id="s54"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t53'><select id="s53"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t52'><select id="s52"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t51'><select id="s51"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t50'><select id="s50"><option value="" selected></option><option value="absence">欠</option></select></td></tr>
+		  <tr><td id='t45'><select id="s45"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t44'><select id="s44"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t43'><select id="s43"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t42'><select id="s42"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t41'><select id="s41"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t40'><select id="s40"><option value="" selected></option><option value="absence">欠</option></select></td></tr>
+		  <tr><td id='t35'><select id="s35"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t34'><select id="s34"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t33'><select id="s33"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t32'><select id="s32"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t31'><select id="s31"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t30'><select id="s30"><option value="" selected></option><option value="absence">欠</option></select></td></tr>
+		  <tr><td id='t25'><select id="s25"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t24'><select id="s24"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t23'><select id="s23"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t22'><select id="s22"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t21'><select id="s21"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t20'><select id="s20"><option value="" selected></option><option value="absence">欠</option></select></td></tr>
+		  <tr><td id='t15'><select id="s15"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t14'><select id="s14"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t13'><select id="s13"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t12'><select id="s12"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t11'><select id="s11"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t10'><select id="s10"><option value="" selected></option><option value="absence">欠</option></select></td></tr>
+		  <tr><td id='t05'><select id="s05"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t04'><select id="s04"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t03'><select id="s03"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t02'><select id="s02"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t01'><select id="s01"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t00'><select id="s00"><option value="" selected></option><option value="absence">欠</option></select></td></tr>
+		  <tr><td colspan='6' class='teacher'>教卓</td></tr>
+		</table>
+		<select id="dimension" onchange="hideUnnecessaryCells()"><option value="3" selected>3×3</option><option value="4" selected>4×4</option><option value="5" selected>5×5</option><option value="6" selected>6×6</option></select>の席数で
+		<select id="pair"><option value="2" selected>2人組</option><option value="3">3人組</option><option value="4">4人組</option></select>を
+	    <button id="doSekigaeBtn" onclick="doSekigae()">つくる</button>
+	</div>
     <script src="scripts/main.js"></script>
   </body>
 </html>

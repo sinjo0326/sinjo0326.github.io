@@ -45,6 +45,9 @@ td{
   max-width: 100px;
 }
 
+th.teacher {
+}
+
 td.欠{
   background-color: #a0a0a0;
 }
@@ -119,4 +122,8 @@ td.Q{
 
 td.R{
   background-color: #7abcff;
+}
+
+.nodisplay{
+  display: none;
 }

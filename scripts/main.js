@@ -1,20 +1,29 @@
-var myButton = document.querySelector('button');
-var myHeading = document.querySelector('h1');
+var displayInputAreaBtn = document.querySelector('displayInputAreaBtn');
+var doSekigaeBtn = document.getElementById('doSekigaeBtn');
 
-function setUserName() {
-	// 座席表をクリア
-    for (var i = 0; i < 6; i++) {
-    	for (var j = 0; j < 6; j++) {
-			var id = String(i) + String(j);
-    		document.getElementById(id).innerHTML = "";
-    		document.getElementById(id).className = "";
-    	}
-    }
+//最大要素数は6*6
+var MAX_DIMENSION = 6;
 
+function hideInputArea() {
+	if (document.getElementById("inputArea").classList.contains("nodisplay")) {
+		document.getElementById("inputArea").classList.remove("nodisplay");
+		document.getElementById("displayArea").classList.add("nodisplay");
+		document.getElementById("displayInputAreaBtn").classList.add("nodisplay");
+	} else {
+		document.getElementById("inputArea").classList.add("nodisplay");
+		document.getElementById("displayArea").classList.remove("nodisplay");
+		document.getElementById("displayInputAreaBtn").classList.remove("nodisplay");
+	}
+}
+
+function doSekigae() {
 	//2人組用、3人組用、4人組用の固定値リストを宣言する。36要素。AABBCC・・・
-    var LIST_2PAIR = new Array("A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H", "I", "I", "J", "J", "K", "K", "L", "L", "M", "M", "N", "N", "O", "O", "P", "P", "Q", "Q", "R", "R");
-    var LIST_3PAIR = new Array("A", "A", "A", "B", "B", "B", "C", "C", "C", "D", "D", "D", "E", "E", "E", "F", "F", "F", "G", "G", "G", "H", "H", "H", "I", "I", "I", "J", "J", "J", "K", "K", "K", "L", "L", "L");
-    var LIST_4PAIR = new Array("A", "A", "A", "A", "B", "B", "B", "B", "C", "C", "C", "C", "D", "D", "D", "D", "E", "E", "E", "E", "F", "F", "F", "F", "G", "G", "G", "G", "H", "H", "H", "H", "I", "I", "I", "I");
+	var LIST_2PAIR = new Array("A", "A", "B", "B", "C", "C", "D", "D", "E", "E", "F", "F", "G", "G", "H", "H", "I", "I", "J", "J", "K", "K", "L", "L", "M", "M", "N", "N", "O", "O", "P", "P", "Q", "Q", "R", "R");
+	var LIST_3PAIR = new Array("A", "A", "A", "B", "B", "B", "C", "C", "C", "D", "D", "D", "E", "E", "E", "F", "F", "F", "G", "G", "G", "H", "H", "H", "I", "I", "I", "J", "J", "J", "K", "K", "K", "L", "L", "L");
+	var LIST_4PAIR = new Array("A", "A", "A", "A", "B", "B", "B", "B", "C", "C", "C", "C", "D", "D", "D", "D", "E", "E", "E", "E", "F", "F", "F", "F", "G", "G", "G", "G", "H", "H", "H", "H", "I", "I", "I", "I");
+
+    // 不要なセルは非表示にする
+    hideUnnecessaryCells();
 
     // 2次元配列の要素数取得・設定
     var dimension = Number(document.getElementById('dimension').value);
@@ -69,11 +78,9 @@ function setUserName() {
     		document.getElementById(id).className = arrayStudent[i][j];
     	}
     }
-}
 
-// ボタンクリック時のイベントハンドラ
-myButton.onclick = function() {
-    setUserName();
+    // 入力欄は非表示にする
+    hideInputArea();
 }
 
 // シャッフル処理
@@ -92,6 +99,38 @@ var Shuffle = function (arr) {
 	  }
 	  return arr;
 	};
+
+function hideUnnecessaryCells() {
+	// 座席表をクリア
+    for (var i = 0; i < 6; i++) {
+    	for (var j = 0; j < 6; j++) {
+			var id = String(i) + String(j);
+    		document.getElementById(id).innerHTML = "";
+    		document.getElementById(id).className = "";
+    	}
+    }
+
+    var dimension = Number(document.getElementById('dimension').value);
+
+    // 不要なセルは非表示にする
+    for (var i = 0; i < MAX_DIMENSION; i++) {
+    	for (var j = 0; j < MAX_DIMENSION; j++) {
+			var id = String(i) + String(j);
+			var tid = "t" + String(i) + String(j);
+    		if ((i < dimension) && (j < dimension)) {
+        		if (document.getElementById(id).classList.contains("nodisplay")) {
+        			document.getElementById(id).classList.remove("nodisplay");
+        		}
+        		if (document.getElementById(tid).classList.contains("nodisplay")) {
+        			document.getElementById(tid).classList.remove("nodisplay");
+        		}
+    		} else {
+    			document.getElementById(id).classList.add("nodisplay");
+    			document.getElementById(tid).classList.add("nodisplay");
+    		}
+    	}
+    }
+}
 
 //'*******************************
 //' 座席グループ分けツール
