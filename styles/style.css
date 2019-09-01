@@ -45,6 +45,7 @@ th.teacher{
 
 td.student{
   font-size: 300%;
+  font-weight: bold;
   text-align: center;
   height: 50px;
   width: 50px;
@@ -59,10 +60,12 @@ td.欠{
 
 td.A{
   background-color: #ff0000;
+  color: #ffffff;
 }
 
 td.B{
   background-color: #ff007f;
+  color: #ffffff;
 }
 
 td.C{
@@ -71,14 +74,17 @@ td.C{
 
 td.D{
   background-color: #7f00ff;
+  color: #ffffff;
 }
 
 td.E{
   background-color: #0000ff;
+  color: #ffffff;
 }
 
 td.F{
   background-color: #007fff;
+  color: #ffffff;
 }
 
 td.G{
@@ -95,6 +101,7 @@ td.I{
 
 td.J{
   background-color: #006633;
+  color: #ffffff;
 }
 
 td.K{
@@ -123,6 +130,7 @@ td.P{
 
 td.Q{
   background-color: #7a7aff;
+  color: #ffffff;
 }
 
 td.R{
