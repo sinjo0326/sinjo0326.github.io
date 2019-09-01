@@ -39,82 +39,84 @@ table{
 td{
   font-size: 300%;
   text-align: center;
+  height:50px;
+  width:50px;
+  max-height: 100px;
   max-width: 100px;
 }
 
-td.Œ‡{
+td.æ¬ {
   background-color: #a0a0a0;
 }
 
 td.A{
-  background-color: #f39700;
+  background-color: #ff0000;
 }
 
 td.B{
-  background-color: #e60012;
+  background-color: #ff007f;
 }
 
 td.C{
-  background-color: #9caeb7;
+  background-color: #ff00ff;
 }
 
 td.D{
-  background-color: #00a7db;
+  background-color: #7f00ff;
 }
 
 td.E{
-  background-color: #009944;
-}
-
-td.F{
-  background-color: #d7c447;
-}
-
-td.G{
-  background-color: #9b7cb6;
-}
-
-td.H{
-  background-color: #00ada9;
-}
-
-td.I{
-  background-color: #bb641d;
-}
-
-td.J{
-  background-color: #e85298;
-}
-
-td.K{
-  background-color: #0079c2;
-}
-
-td.L{
-  background-color: #6cbb5a;
-}
-
-td.M{
-  background-color: #b6007a;
-}
-
-td.N{
-  background-color: #000000;
-  color: #ffffff
-}
-
-td.O{
-  background-color: #ff38ff;
-}
-
-td.P{
-  background-color: #ffffff;
-}
-
-td.Q{
   background-color: #0000ff;
 }
 
-td.R{
+td.F{
+  background-color: #007fff;
+}
+
+td.G{
+  background-color: #00ffff;
+}
+
+td.H{
+  background-color: #00ff7f;
+}
+
+td.I{
+  background-color: #ff9966;
+}
+
+td.J{
+  background-color: #006633;
+}
+
+td.K{
   background-color: #ffff00;
+}
+
+td.L{
+  background-color: #ff7f00;
+}
+
+td.M{
+  background-color: #ff7a7a;
+}
+
+td.N{
+  background-color: #ff7abc;
+}
+
+td.O{
+  background-color: #ff7aff;
+}
+
+td.P{
+  background-color: #bc7aff;
+}
+
+td.Q{
+  background-color: #7a7aff;
+}
+
+td.R{
+  background-color: #7abcff;
 }
