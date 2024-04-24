@@ -152,6 +152,61 @@ function splitValues(value) {
     return { firstValue, secondValue };
 }
 
+// 欠席者の選択状態が変更されたときに背景色を変更する関数
+function changeBackgroundColor(selectId, tdId) {
+    const selectElement = document.getElementById(selectId);
+    const tdElement = document.getElementById(tdId);
+
+    selectElement.addEventListener('change', function() {
+        if (selectElement.value === 'absence') {
+            // "absence" が選択された場合は背景色をグレーにする
+            tdElement.style.backgroundColor = 'lightgrey';
+        } else {
+            // それ以外の場合は背景色をデフォルトに戻す
+            tdElement.style.backgroundColor = '';
+        }
+    });
+}
+
+changeBackgroundColor('s00', 't00');
+changeBackgroundColor('s01', 't01');
+changeBackgroundColor('s02', 't02');
+changeBackgroundColor('s03', 't03');
+changeBackgroundColor('s04', 't04');
+changeBackgroundColor('s05', 't05');
+changeBackgroundColor('s10', 't10');
+changeBackgroundColor('s11', 't11');
+changeBackgroundColor('s12', 't12');
+changeBackgroundColor('s13', 't13');
+changeBackgroundColor('s14', 't14');
+changeBackgroundColor('s15', 't15');
+changeBackgroundColor('s20', 't20');
+changeBackgroundColor('s21', 't21');
+changeBackgroundColor('s22', 't22');
+changeBackgroundColor('s23', 't23');
+changeBackgroundColor('s24', 't24');
+changeBackgroundColor('s25', 't25');
+changeBackgroundColor('s30', 't30');
+changeBackgroundColor('s31', 't31');
+changeBackgroundColor('s32', 't32');
+changeBackgroundColor('s33', 't33');
+changeBackgroundColor('s34', 't34');
+changeBackgroundColor('s35', 't35');
+changeBackgroundColor('s40', 't40');
+changeBackgroundColor('s41', 't41');
+changeBackgroundColor('s42', 't42');
+changeBackgroundColor('s43', 't43');
+changeBackgroundColor('s44', 't44');
+changeBackgroundColor('s45', 't45');
+changeBackgroundColor('s50', 't50');
+changeBackgroundColor('s51', 't51');
+changeBackgroundColor('s52', 't52');
+changeBackgroundColor('s53', 't53');
+changeBackgroundColor('s54', 't54');
+changeBackgroundColor('s55', 't55');
+
+
+
 //'*******************************
 //' 座席グループ分けツール
 //' ver           0.1.0
