@@ -21,7 +21,7 @@
 	<p></p>
 	<button id="displayInputAreaBtn" onclick="hideInputArea()" class="nodisplay">やり直す</button>
 	<div id="inputArea">
-		<select id="dimension" onchange="hideUnnecessaryCells()"><option value="3">3×3</option><option value="4">4×4</option><option value="5">5×5</option><option value="6">6×6</option><option value="6_5">6×5</option><option value="6_4">6×4</option></select>の座席数で
+		<select id="dimension" onchange="hideUnnecessaryCells()"><option value="3">3×3</option><option value="4">4×4</option><option value="4_6">4×6</option><option value="5">5×5</option><option value="5_6">5×6</option><option value="6" selected>6×6</option></select>の座席数で
 		<p>欠席者を以下の表から選択して</p>
 		<table>
 		  <tr><td id='t55'><select id="s55"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t54'><select id="s54"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t53'><select id="s53"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t52'><select id="s52"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t51'><select id="s51"><option value="" selected></option><option value="absence">欠</option></select></td><td id='t50'><select id="s50"><option value="" selected></option><option value="absence">欠</option></select></td></tr>
@@ -35,6 +35,25 @@
 		<select id="pair"><option value="2" selected>2人組</option><option value="3">3人組</option><option value="4">4人組</option></select>を
 	    <button id="doSekigaeBtn" onclick="doSekigae()">つくる</button>
 	</div>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.js" id="mainScript"></script>
+    <script>
+    // キャッシュバスティング用のタイムスタンプを生成
+    const timestamp = new Date().getTime();
+    const scriptElement = document.getElementById('mainScript');
+    const scriptSrc = scriptElement.getAttribute('src');
+
+    // キャッシュバスティング用のタイムスタンプをURLに追加
+    scriptElement.setAttribute('src', scriptSrc + '?v=' + timestamp);
+    
+    // こっちはcss用
+    const linkElement = document.querySelector('link[href="styles/style.css"]');
+    if (linkElement) {
+        const href = linkElement.getAttribute('href');
+        linkElement.setAttribute('href', href + '?v=' + timestamp);
+    } else {
+        console.error('CSS link element not found');
+    }
+
+    </script>
   </body>
 </html>
