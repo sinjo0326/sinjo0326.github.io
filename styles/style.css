@@ -3,6 +3,11 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
+/* idがdimensionでないselect要素の表示サイズを大きくする */
+select {
+    font-size: 50px; /* フォントサイズを50pxに設定 */
+}
+
 h1 {
   font-size: 60px;
   text-align: center;
@@ -38,6 +43,7 @@ table{
 td{
   font-size: 300%;
   text-align: center;
+  border: 1px solid #000; /* 黒色の1pxの境界線を追加 */
 }
 
 th.teacher{
@@ -139,4 +145,14 @@ td.R{
 
 .nodisplay{
   display: none;
+}
+
+/* ボタンのスタイル */
+#doSekigaeBtn {
+  font-size: 24px; /* 文字サイズを大きくする */
+  background-color: #ff0000; /* 背景色を赤にする */
+  color: #ffffff; /* テキストの色を白にする */
+  border: 2px solid #000000; /* ボーダーを追加する */
+  border-radius: 8px; /* 角丸にする */
+  padding: 10px 20px; /* パディングを追加する */
 }
