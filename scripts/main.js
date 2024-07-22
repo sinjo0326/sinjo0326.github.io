@@ -157,15 +157,15 @@ function changeBackgroundColor(selectId, tdId) {
     const selectElement = document.getElementById(selectId);
     const tdElement = document.getElementById(tdId);
 
-    selectElement.addEventListener('change', function() {
-        if (selectElement.value === 'absence') {
-            // "absence" が選択された場合は背景色をグレーにする
-            tdElement.style.backgroundColor = 'lightgrey';
-        } else {
-            // それ以外の場合は背景色をデフォルトに戻す
-            tdElement.style.backgroundColor = '';
-        }
-    });
+    // selectElement.addEventListener('change', function() {
+    //     if (selectElement.value === 'absence') {
+    //         // "absence" が選択された場合は背景色をグレーにする
+    //         tdElement.style.backgroundColor = 'lightgrey';
+    //     } else {
+    //         // それ以外の場合は背景色をデフォルトに戻す
+    //         tdElement.style.backgroundColor = '';
+    //     }
+    // });
 }
 
 changeBackgroundColor('s00', 't00');
