@@ -60,6 +60,10 @@ td.student{
   padding: 10px 0px;
 }
 
+td.欠{
+  background-color: #a0a0a0;
+}
+
 td.A{
   background-color: #ff0000;
   color: #ffffff;
